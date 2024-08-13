@@ -13,9 +13,9 @@ return {
         -- find files
         vim.keymap.set('n', '<leader><leader>', builtin.find_files, {})
         -- find buffer
-        vim.keymap.set('n', '<leader>b', builtin.buffers, {})
+        vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
         -- find live
-        vim.keymap.set('n', '<leader>l', builtin.live_grep, {})
+        vim.keymap.set('n', '<leader>fl', builtin.live_grep, {})
         -- find word
         vim.keymap.set('n', '<leader>fw', function()
             builtin.grep_string({search = vim.fn.input("Grep > ")})
