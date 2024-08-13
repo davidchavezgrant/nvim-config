@@ -35,22 +35,6 @@ return {
             end
         })
 
-        -- Start nvim-tree when Vim is started without file arguments
-        local function open_nvim_tree(data)
-            local directory = vim.fn.isdirectory(data.file) == 1
-
-            if not directory then
-                return
-            end
-
-            -- Change to the directory
-            vim.cmd.cd(data.file)
-
-            -- Open the tree
-            require("nvim-tree.api").tree.open()
-        end
-
-        vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
     end
 }

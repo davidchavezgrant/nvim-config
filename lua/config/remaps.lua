@@ -50,9 +50,6 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 -- REPLACE WORD UNDER CURSOR
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
--- QUICKWRITE
-vim.keymap.set("n", "W", ":w<CR>")
-
 -- QUICK QUIT
 vim.keymap.set("n", "Q", ":q<CR>")
 

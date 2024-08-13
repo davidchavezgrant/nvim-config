@@ -41,6 +41,9 @@ vim.opt.updatetime = 50
 -- Color column
 vim.opt.colorcolumn = "100"
 
+-- Indentation
+vim.opt.autoindent = true
+
 -- Disable backup and swap files
 -- Allow Undotree to have persistent undo history
 vim.opt.backup = false
@@ -55,3 +58,6 @@ vim.cmd('syntax enable')
 vim.cmd('filetype plugin on')
 
 vim.cmd('set noshowmode')
+
+-- Set fillchars for end of buffer
+vim.opt.fillchars = {eob = " "}
