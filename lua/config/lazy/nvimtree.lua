@@ -13,14 +13,14 @@ return {
                 side = "right",
             },
             renderer = {
-                group_empty = true,
+                group_empty = false,
             },
             filters = {
-                dotfiles = false,
-                custom = { ".git", ".DS_Store", ".idea", ".vscode", ".cache", "__pycache__", ".pytest_cache", ".mypy_cache", ".venv", "node_modules" },
+                dotfiles = true,
+                custom = { ".DS_Store", "__pycache__", ".pytest_cache", ".mypy_cache", ".venv", "node_modules" },
             },
             git = {
-                ignore = false,
+                ignore = true,
             },
         })
 

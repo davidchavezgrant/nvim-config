@@ -9,7 +9,7 @@ return  {
                 show_buffer_close_icons = false,
                 show_close_icon = false,
                 themable = false,
-                numbers = "ordinal",
+                numbers = "both",
                 sort_by = 'id',
                 diagnostics = "nvim_lsp | coc",
                 offsets = {
