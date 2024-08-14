@@ -17,7 +17,7 @@ return {
             },
             filters = {
                 dotfiles = true,
-                custom = { ".DS_Store", "__pycache__", ".pytest_cache", ".mypy_cache", ".venv", "node_modules" },
+                custom = { ".DS_Store", "__pycache__", ".pytest_cache", ".mypy_cache", "node_modules" },
             },
             git = {
                 ignore = true,
@@ -35,6 +35,15 @@ return {
             end
         })
 
+      -- Exit Vim if nvim-tree is the only window remaining in the only tab
+        vim.api.nvim_create_autocmd("BufEnter", {
+            nested = true,
+            callback = function()
+                if #vim.api.nvim_list_wins() == 1 and require("nvim-tree.utils").is_nvim_tree_buf() then
+                    vim.cmd "quit"
+                end
+            end
+        })
 
     end
 }
