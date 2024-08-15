@@ -1,7 +1,11 @@
 local theme_map = {
     ["*.py"] = "UseMonokai",
     ["*.lua"] = "UseBlueMoon",
-    ["*.js"] = "UseNeon",
+    ["*.js"] = "UseDracula",
+    ["*.cs"] = "UseRiderDark",
+    ["*.ts"] = "UseVscode",
+    ["*.tsx"] = "UseVscode",
+    ["fugitive"] = "UseGithub"
 }
 
 for pattern, theme_function_name in pairs(theme_map) do
@@ -9,7 +13,10 @@ for pattern, theme_function_name in pairs(theme_map) do
         pattern = pattern,
         callback = function()
             if vim.bo.filetype ~= "NvimTree" then
-                _G[theme_function_name]()
+                local status, err = pcall(function() _G[theme_function_name]() end)
+                if not status then
+                    vim.notify("Error applying theme: " .. err, vim.log.levels.ERROR)
+                end
             end
         end,
     })
@@ -18,7 +25,10 @@ for pattern, theme_function_name in pairs(theme_map) do
         pattern = pattern,
         callback = function()
             if vim.bo.filetype ~= "NvimTree" then
-                UseTheme()
+                local status, err = pcall(UseTheme)
+                if not status then
+                    vim.notify("Error resetting theme: " .. err, vim.log.levels.ERROR)
+                end
             end
         end,
     })

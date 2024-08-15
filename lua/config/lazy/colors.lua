@@ -188,27 +188,27 @@ return {
     {
         "kyazdani42/blue-moon",
         name = "blue-moon",
-        lazy = true,
+        lazy = false,
     },
     {
         "xiantang/darcula-dark.nvim",
         name = "darcula",
-        lazy = true,
+        lazy = false,
     },
     {
         'aliqyan-21/darkvoid.nvim',
         name = 'darkvoid',
-        lazy = true,
+        lazy = false 
     },
     {
         "sekke276/dark_flat.nvim",
         name = "dark_flat",
-        lazy = true,
+        lazy = false 
     },
     {
         "Mofiqul/dracula.nvim",
         name = "dracula",
-        lazy = true,
+        lazy = false
     },
     {
         "maxmx03/fluoromachine.nvim",
@@ -229,17 +229,17 @@ return {
     { 
         'projekt0n/github-nvim-theme',
         name = 'github',
-        lazy = true,
+        lazy = false
     },
     {
         "xero/miasma.nvim",
         name = "miasma",
-        lazy = true,
+        lazy = false
     },
     {
         "kdheepak/monochrome.nvim",
         name = "monochrome",
-        lazy = true,
+        lazy = false
     },
     {
         "tanvirtin/monokai.nvim",
@@ -254,27 +254,27 @@ return {
     {
         "shaunsingh/moonlight.nvim",
         name = "moonlight",
-        lazy = true,
+        lazy = false
     },
     {
         "aktersnurra/no-clown-fiesta.nvim",
         name = "no-clown-fiesta",
-        lazy = true,
+        lazy = false
     },
     {
         "nyoom-engineering/oxocarbon.nvim",
         name = "oxocarbon",
-        lazy = true,
+        lazy = false
     },
     {
         'olivercederborg/poimandres.nvim',
         name = 'poimandres',
-        lazy = true,
+        lazy = false
     },
     {
         "realbucksavage/riderdark.vim",
         name = "riderdark",
-        lazy = true,
+        lazy = false
     },
     {
         "davidchavezgrant/vscode.nvim",
@@ -284,7 +284,7 @@ return {
     {
         "rose-pine/neovim",
         name = "rose-pine",
-        lazy = true,
+        lazy = false,
         config = function()
             require('rose-pine').setup({
                 disable_background = false,
@@ -295,7 +295,7 @@ return {
     {
         "zenbones-theme/zenbones.nvim",
         name = "zenbones",
-        lazy = true,
+        lazy = false,
         dependencies = {
             "rktjmp/lush.nvim"
         }
