@@ -1,4 +1,4 @@
-function SetAccents()
+function SetTransparentBg()
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#002030" })
     vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
@@ -9,209 +9,295 @@ function SetAccents()
     vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#f92672", bg = "NONE" })
     vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "NONE", ctermbg = "NONE" })
     vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { bg = "NONE", ctermbg = "NONE" })
-
 end
 
 function UseTheme(color)
-	color = color or "vscode"
-	vim.cmd.colorscheme(color)
-    SetAccents()
+    vim.cmd.colorscheme("default")
+    if color then
+        vim.cmd.colorscheme(color)
+    else
+        UseVscode()
+    end
+end
+
+---------------------------------------------------
+-- ZENBONES
+---------------------------------------------------
+function UseZenbones()
+    UseTheme("zenbones")
+end
+
+function UseZenMono()
+    UseTheme("zenwritten")
+end
+
+function UseZenNeo()
+    UseTheme("neobones")
+end
+
+function UseZenRose()
+    UseTheme("rosebones")
+end
+
+function UseZenTokyo()
+    UseTheme("tokyobones")
+end
+
+function UseZenDuck()
+    UseTheme("duckbones")
+end
+
+function UseZenKanagawa()
+    UseTheme("kanagawabones")
+end
+
+function UseZenForest()
+    UseTheme("forestbones")
+end
+
+function UseZenBurned()
+    UseTheme("zenburned")
+end
+
+function UseZenSeoul()
+    UseTheme("seoulbones")
+end
+
+function UseZenNord()
+    UseTheme("nordbones")
+end
+
+---------------------------------------------------
+-- NEON
+---------------------------------------------------
+local function useNeon(theme)
+    local fm = require 'fluoromachine'
+    fm.setup {
+        glow = true,
+        theme = theme,
+        transparent = false,
+    }
+    vim.cmd.colorscheme 'fluoromachine'
+    UseTheme("fluoromachine")
+end
+
+function UseNeonRetrowave()
+    useNeon("retrowave")
+end
+
+function UseNeonDelta()
+    useNeon("delta")
+end
+
+function UseNeon()
+    useNeon("fluoromachine")
+end
+
+---------------------------------------------------
+-- GITHUB
+---------------------------------------------------
+function UseGithub()
+    UseTheme("github_dark")
+end
+
+function UseGithubDefault()
+    UseTheme("github_dark_default")
+end
+
+function UseGithubDimmed()
+    UseTheme("github_dark_dimmed")
+end
+
+function UseGithubHighContrast()
+    UseTheme("github_dark_high_contrast")
+end
+
+---------------------------------------------------
+-- MINIMAL
+---------------------------------------------------
+function UseMonoDarkVoid()
+    UseTheme("darkvoid")
+end
+
+function UseMonochrome()
+    UseTheme("monochrome")
+end
+
+---------------------------------------------------
+--- OTHERS
+---------------------------------------------------
+function UseBlueMoon()
+    UseTheme("blue-moon")
+end
+
+function UseCarbon()
+    UseTheme("oxocarbon")
+end
+
+function UseDarcula()
+    UseTheme("darcula-dark")
+end
+
+function UseDarkFlat()
+    UseTheme("dark_flat")
+end
+
+function UseDracula()
+    UseTheme("dracula")
+end
+
+function UseMiasma()
+    UseTheme("miasma")
+end
+
+function UseMonokai()
+    UseTheme("monokai")
+end
+
+function UseMoonlight()
+    UseTheme("moonlight")
+end
+
+function UseNoClownFiesta()
+    UseTheme("no-clown-fiesta")
+end
+
+function UsePoimandres()
+    UseTheme("poimandres")
 end
 
 function UseRiderDark()
-    vim.cmd.colorscheme("riderdark")
-    SetAccents()
-end
-
-function UseTokyoNight()
-    vim.cmd.colorscheme("tokyonight")
-    SetAccents()
-end
-
-function UseGruvbox()
-    vim.cmd.colorscheme("gruvbox")
-    SetAccents()
+    UseTheme("riderdark")
 end
 
 function UseRosePine()
-    vim.cmd.colorscheme("rose-pine")
-    SetAccents()
+    UseTheme("rose-pine")
 end
 
-function UseSonokai()
-    vim.cmd.colorscheme("sonokai")
-    SetAccents()
-end
-
-function UseGithub()
-    vim.cmd.colorscheme("github")
-    SetAccents()
-end
-
-function UseFlow()
-    vim.cmd.colorscheme("flow")
+function UseVimDefault()
+    vim.cmd.colorscheme("default")
     SetAccents()
 end
 
 function UseVscode()
-    vim.cmd.colorscheme("vscode")
-    SetAccents()
+    UseTheme("vscode")
+    SetTransparentBg()
+    vim.api.nvim_set_hl(0, "Normal", { bg = "#000014" })
 end
-
-function UseDracula()
-    vim.cmd.colorscheme("dracula") 
-    SetAccents()
-end
-
-function UseMonokai()
-    vim.cmd.colorscheme("monokai")
-    SetAccents()
-end
-
-function UseOnedark()
-    vim.cmd.colorscheme("onedark")
-    SetAccents()
-end
-
-function UseCyberdream()
-    vim.cmd.colorscheme("cyberdream")
-    SetAccents()
-end
-
-function UsePoimandres()
-    vim.cmd.colorscheme("poimandres")
-    SetAccents()
-end
-
-function UseMoonlight()
-    vim.cmd.colorscheme("moonlight")
-    SetAccents()
-end
-
-
 return {
-
     {
-        "erikbackman/brightburn.vim",
-    },
-
-    {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        opts = {},
+        "kyazdani42/blue-moon",
+        name = "blue-moon",
+        lazy = true,
     },
     {
-        "ellisonleao/gruvbox.nvim",
-        name = "gruvbox",
-        config = function()
-            require("gruvbox").setup({
-                terminal_colors = true,
-                undercurl = true,
-                underline = true,
-                bold = false,
-                italic = {
-                    strings = false,
-                    emphasis = false,
-                    comments = false,
-                    operators = false,
-                    folds = false,
-                },
-                strikethrough = true,
-                invert_selection = false,
-                invert_signs = false,
-                invert_tabline = false,
-                invert_intend_guides = false,
-                inverse = false, -- invert background for search, diffs, statuslines and errors
-                contrast = "soft", -- can be "hard", "soft" or empty string
-                palette_overrides = {},
-                overrides = {},
-                dim_inactive = false,
-                transparent_mode = true,
-            })
-        end,
+        "xiantang/darcula-dark.nvim",
+        name = "darcula",
+        lazy = true,
     },
     {
-        "folke/tokyonight.nvim",
-        config = function()
-            require("tokyonight").setup({
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                style = "storm", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-                transparent = true, -- Enable this to disable setting the background color
-                terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
-                styles = {
-                    -- Style to be applied to different syntax groups
-                    -- Value is any valid attr-list value for `:help nvim_set_hl`
-                    comments = { italic = false },
-                    keywords = { italic = false },
-                    -- Background styles. Can be "dark", "transparent" or "normal"
-                    sidebars = "dark", -- style for sidebars, see below
-                    floats = "dark", -- style for floating windows
-                },
-            })
-        end
-    },
-
-    {
-        "rose-pine/neovim",
-        name = "rose-pine",
-        config = function()
-            require('rose-pine').setup({
-                disable_background = true,
-                styles = {
-                    italic = false,
-                },
-            })
-        end
+        'aliqyan-21/darkvoid.nvim',
+        name = 'darkvoid',
+        lazy = true,
     },
     {
-        "sainnhe/sonokai",
-        name = "sonokai",
-        config = function()
-            vim.g.sonokai_style = "andromeda"
-            vim.g.sonokai_enable_italic = 1
-            vim.g.sonokai_disable_italic_comment = 1
-        end
-    },
-    {
-        "projekt0n/github-nvim-theme",
-        name = "github",
-    },
-    {
-        "0xstepit/flow.nvim",
-        name = "flow"
-    },
-    {
-        "davidchavezgrant/vscode.nvim",
-        name = "vscode",
+        "sekke276/dark_flat.nvim",
+        name = "dark_flat",
+        lazy = true,
     },
     {
         "Mofiqul/dracula.nvim",
         name = "dracula",
+        lazy = true,
+    },
+    {
+        "maxmx03/fluoromachine.nvim",
+        name = "fluoromachine",
+        lazy = true,
+        config = function ()
+            local fm = require 'fluoromachine'
+
+            fm.setup {
+                glow = true,
+                theme = 'delta',
+                transparent = false,
+            }
+
+            vim.cmd.colorscheme 'fluoromachine'
+        end
+    },
+    { 
+        'projekt0n/github-nvim-theme',
+        name = 'github',
+        lazy = true,
+    },
+    {
+        "xero/miasma.nvim",
+        name = "miasma",
+        lazy = true,
+    },
+    {
+        "kdheepak/monochrome.nvim",
+        name = "monochrome",
+        lazy = true,
     },
     {
         "tanvirtin/monokai.nvim",
         name = "monokai",
-    },
-    {
-        "navarasu/onedark.nvim",
-        name = "onedark",
-    },
-    {
-        "scottmckendry/cyberdream.nvim",
-        name = "cyberdream",
-    },
-    {
-        "olivercederborg/poimandres.nvim",
-        name = "poimandres",
+        lazy = false,
+        ft = "python",
+        config = function()
+            require('monokai').setup()
+            UseMonokai()
+        end
     },
     {
         "shaunsingh/moonlight.nvim",
         name = "moonlight",
+        lazy = true,
+    },
+    {
+        "aktersnurra/no-clown-fiesta.nvim",
+        name = "no-clown-fiesta",
+        lazy = true,
+    },
+    {
+        "nyoom-engineering/oxocarbon.nvim",
+        name = "oxocarbon",
+        lazy = true,
+    },
+    {
+        'olivercederborg/poimandres.nvim',
+        name = 'poimandres',
+        lazy = true,
     },
     {
         "realbucksavage/riderdark.vim",
         name = "riderdark",
-    }
-
+        lazy = true,
+    },
+    {
+        "davidchavezgrant/vscode.nvim",
+        name = "vscode",
+        lazy = false,
+    },
+    {
+        "rose-pine/neovim",
+        name = "rose-pine",
+        lazy = true,
+        config = function()
+            require('rose-pine').setup({
+                disable_background = false,
+                transparent_background = true,
+            })
+        end
+    },
+    {
+        "zenbones-theme/zenbones.nvim",
+        name = "zenbones",
+        lazy = true,
+        dependencies = {
+            "rktjmp/lush.nvim"
+        }
+    },
 }

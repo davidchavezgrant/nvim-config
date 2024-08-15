@@ -59,5 +59,7 @@ vim.cmd('filetype plugin on')
 
 vim.cmd('set noshowmode')
 
+vim.cmd('set guicursor=n-v-c:blinkon1,i-ci-ve:ver25')
+
 -- Set fillchars for end of buffer
 vim.opt.fillchars = {eob = " "}

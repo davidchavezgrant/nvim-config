@@ -6,6 +6,7 @@ return {
             "mfussenegger/nvim-dap-python",
             "nvim-neotest/nvim-nio" 
         },
+        lazy = true,
         config = function()
             require("dap")
             require("dap-python")
@@ -19,6 +20,7 @@ return {
     },
     {
         "rcarriga/nvim-dap-ui",
+        lazy = true,
         config = function()
             local dap = require("dap")
             local dapui = require("dapui")
