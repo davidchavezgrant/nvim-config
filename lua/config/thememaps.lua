@@ -5,7 +5,10 @@ local theme_map = {
     ["*.cs"] = "UseRiderDark",
     ["*.ts"] = "UseVscode",
     ["*.tsx"] = "UseVscode",
-    ["fugitive"] = "UseGithub"
+    ["*.txt"] = "UseZenbones",
+    ["*.json"] = "UseCarbon",
+    ["*.yaml"] = "UseCarbon",
+    ["*.yml"] = "UseCarbon"
 }
 
 for pattern, theme_function_name in pairs(theme_map) do
