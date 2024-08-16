@@ -17,4 +17,13 @@ return {
     {
         "machakann/vim-sandwich"
     },
+    {
+        "tpope/vim-commentary"
+    },
+    {
+        "tpope/vim-abolish"
+    },
+    {
+        "chaoren/vim-wordmotion"
+    }
 }

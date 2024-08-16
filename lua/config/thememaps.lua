@@ -1,5 +1,5 @@
 local theme_map = {
-    ["*.py"] = "UseMonokai",
+    ["*.py"] = "UseDarcula",
     ["*.lua"] = "UseBlueMoon",
     ["*.js"] = "UseDracula",
     ["*.cs"] = "UseRiderDark",
@@ -8,7 +8,9 @@ local theme_map = {
     ["*.txt"] = "UseZenbones",
     ["*.json"] = "UseCarbon",
     ["*.yaml"] = "UseCarbon",
-    ["*.yml"] = "UseCarbon"
+    ["*.yml"] = "UseCarbon",
+    ["*.sh"] = "UsePoimandres",
+    ["*.vim"] = "UseVimDefault"
 }
 
 for pattern, theme_function_name in pairs(theme_map) do
