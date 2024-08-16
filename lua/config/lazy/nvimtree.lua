@@ -11,9 +11,13 @@ return {
             view = {
                 width = 40,
                 side = "right",
+                number = true,
+                relativenumber = true,
             },
             renderer = {
-                group_empty = false,
+                group_empty = true,
+                highlight_git = "all",
+                highlight_opened_files = "all",
             },
             filters = {
                 dotfiles = true,
@@ -22,10 +26,33 @@ return {
             git = {
                 ignore = true,
             },
+            update_focused_file = {
+                enable = true,
+                update_root = {
+                    enable = true,
+                }
+            },
+            hijack_cursor = true,
+            disable_netrw = true,
+            sync_root_with_cwd = true,
+
         })
+        local api = require("nvim-tree.api")
+
+        local function toggle_node()
+            local node = api.tree.get_node_under_cursor()
+            if node then
+                api.node.open.edit()
+            end
+        end
+
+        -- Open and close directories with <Left> and <Right>
+        vim.keymap.set("n", "<Left>", toggle_node, {})
+        vim.keymap.set("n", "<Right>", toggle_node, {})
 
         -- Toggle nvim-tree with \
         vim.api.nvim_set_keymap("n", "<C-\\>", ":NvimTreeFocus<CR>", { noremap = true, silent = true })
+
 
         -- Open nvim-tree and move cursor to the other window
         vim.api.nvim_create_autocmd("VimEnter", {
