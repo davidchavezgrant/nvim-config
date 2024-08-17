@@ -58,6 +58,7 @@ vim.cmd('syntax enable')
 vim.cmd('filetype plugin on')
 
 vim.cmd('set noshowmode')
+vim.cmd('set cmdheight=0')
 
 vim.cmd('set guicursor=n-v-c:blinkon1,i-ci-ve:ver25')
 

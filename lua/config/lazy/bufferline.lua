@@ -20,16 +20,20 @@ return  {
         vim.opt.termguicolors = true
         require("bufferline").setup{
             options = {
-                show_buffer_close_icons = false,
-                show_close_icon = false,
+                sort_by = 'id',
                 themable = true,
                 numbers = "ordinal",
-                sort_by = 'id',
+                show_close_icon = false,
                 diagnostics = "nvim_lsp",
+                separator_style = "slant",
+                show_buffer_close_icons = false,
                 diagnostics_indicator = get_diagnostics_indicator,
+                name_formatter = function(buf)
+                    return " " .. buf.name
+                end,
                 groups = {
                     items = {
-                        require('bufferline.groups').builtin.pinned:with({ icon =  "" })
+                        require('bufferline.groups').builtin.pinned:with({ icon =  "  " })
                     }
                 },
                 offsets = {
@@ -39,8 +43,8 @@ return  {
                         highlight = "Directory",
                         text_align = "left"
                     }
-                }
-            }
+                },
+            },
         }
 
         -- Close current buffer (ALT-W)
