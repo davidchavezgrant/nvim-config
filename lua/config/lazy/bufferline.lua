@@ -1,14 +1,15 @@
 local function get_diagnostics_indicator(_, _, diagnostics, _)
-    local display_string = " "
-    for level, count in pairs(diagnostics) do
-        local symbol =
-            (level == "error" and " ")
-        or (level == "warning" and " ")
-        or (level ==  "info" and " ")
-        or (level == "hint" and " ")
-        display_string = display_string .. symbol .. '(' .. count .. ')' .. ' '
+    if diagnostics.error and diagnostics.error > 0 then
+        return "   (" .. diagnostics.error .. ")"
+    elseif diagnostics.warning and diagnostics.warning > 0 then
+        return "   (" .. diagnostics.warning .. ')'
+    elseif diagnostics.info and diagnostics.info > 0 then
+        return "   (" .. diagnostics.info .. ')'
+    elseif diagnostics.hint and diagnostics.hint > 0 then
+        return "  (" .. diagnostics.hint .. ')'
+    else
+        return ""
     end
-    return display_string
 end
 
 return  {
