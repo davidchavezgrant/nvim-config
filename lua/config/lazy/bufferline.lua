@@ -42,6 +42,12 @@ return  {
                         text = "📁",
                         highlight = "Directory",
                         text_align = "left"
+                    },
+                    {
+                        filetype="undotree",
+                        text="Undo History",
+                        highlight = "Directory",
+                        text_align = "left"
                     }
                 },
             },
