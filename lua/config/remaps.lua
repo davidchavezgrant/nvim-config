@@ -54,3 +54,10 @@ vim.keymap.set("n", "Q", ":q<CR>")
 -- Move between VIM windows (mac)
 vim.keymap.set("n", "∆", "<C-w>h", { noremap = true, silent = true })
 vim.keymap.set("n", "˚", "<C-w>l", { noremap = true, silent = true })
+
+-- Remap <C-x> to <A-=> for memorability
+vim.keymap.set('n', '≠', '<Cmd>execute "normal! <C-a>"<CR>', { noremap = true, expr = false, desc = 'Increment number' })
+vim.keymap.set('n', '–', '<Cmd>execute "normal! <C-x>"<CR>', { noremap = true, expr = false, desc = 'Decrement number' })
+-- No ops for tmux
+vim.keymap.set('n', "<C-x>", "<Nop>", { noremap = true, expr = false, desc = 'No operation' })
+vim.keymap.set('n', "<C-a>", "<Nop>", { noremap = true, expr = false, desc = 'No operation' })

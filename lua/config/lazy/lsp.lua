@@ -17,8 +17,8 @@ return {
           group = vim.api.nvim_create_augroup('user_lsp_attach', {clear = true}),
           callback = function(event)
             local opts = {buffer = event.buf}
-            vim.keymap.set('n', '<C-n>', function() vim.diagnostic.goto_next() end, opts)
-            vim.keymap.set('n', '<C-p>', function() vim.diagnostic.goto_prev() end, opts)
+            vim.keymap.set('n', '≥', function() vim.diagnostic.goto_next() end, opts)
+            vim.keymap.set('n', '≤', function() vim.diagnostic.goto_prev() end, opts)
             vim.keymap.set('n', '<leader><leader>', function() vim.lsp.buf.hover() end, opts)
             vim.keymap.set('n', '<leader><CR>', function() vim.lsp.buf.code_action() end, opts)
             vim.keymap.set('n', '<leader>fs', function() vim.lsp.buf.workspace_symbol() end, opts)

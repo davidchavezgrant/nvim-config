@@ -1,3 +1,13 @@
+local function get_diagnostics_indicator(count, level, diagnostics_dict, context)
+    local status = " "
+    for error, n in pairs(diagnostics_dict) do
+        local sym = error == "error" and " "
+        or (error == "warning" and " " or " ")
+        status = status .. sym .. '(' .. n .. ')' .. ' '
+    end
+    return status
+end
+
 return  {
     'akinsho/bufferline.nvim',
     version = "*",
@@ -12,15 +22,7 @@ return  {
                 numbers = "ordinal",
                 sort_by = 'id',
                 diagnostics = "nvim_lsp",
-                diagnostics_indicator = function(count, level, diagnostics_dict, context)
-                    local s = " "
-                    for e, n in pairs(diagnostics_dict) do
-                        local sym = e == "error" and " "
-                        or (e == "warning" and " " or " ")
-                        s = s .. n .. sym
-                    end
-                    return s
-                end,
+                diagnostics_indicator = get_diagnostics_indicator,
                 groups = {
                     items = {
                         require('bufferline.groups').builtin.pinned:with({ icon =  "" })

@@ -57,15 +57,6 @@ return {
 
         vim.keymap.set("n", "<C-\\>", toggle_or_focus, { noremap = true, silent = true })
 
-        -- Open and close directories with <Left> and <Right>
-        local function toggle_node()
-            local node = api.tree.get_node_under_cursor()
-            if node then
-                api.node.open.edit()
-            end
-        end
-        vim.keymap.set("n", "<Left>", toggle_node, {})
-        vim.keymap.set("n", "<Right>", toggle_node, {})
 
         -- Open nvim-tree and move cursor to the other window
         vim.api.nvim_create_autocmd("VimEnter", {
