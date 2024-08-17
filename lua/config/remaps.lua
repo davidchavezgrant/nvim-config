@@ -33,8 +33,6 @@ vim.keymap.set("v", "<leader>d", "\"_d")
 -- EQUATE <C-c> TO ESC FOR VISUAL LINE MODE
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
--- DISABLE EX MODE
-vim.keymap.set("n", "Q", "<Nop>")
 
 -- SWITCH TMUX SESSIONS (doesn't work with iTerm2 tmux integration)
 -- vim.keymap.set("n", "<C-f>",  "<cmd>silent !tmux neww tmux-sessionizer<CR>")
@@ -53,3 +51,6 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- QUICK QUIT
 vim.keymap.set("n", "Q", ":q<CR>")
 
+-- Move between VIM windows (mac)
+vim.keymap.set("n", "˙", "<C-w>h", { noremap = true, silent = true })
+vim.keymap.set("n", "¬", "<C-w>l", { noremap = true, silent = true })

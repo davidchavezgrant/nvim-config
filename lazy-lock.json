@@ -20,6 +20,7 @@
   "lazy.nvim": { "branch": "main", "commit": "077102c5bfc578693f12377846d427f49bc50076" },
   "lualine.nvim": { "branch": "master", "commit": "b431d228b7bbcdaea818bdc3e25b8cdbe861f056" },
   "lush.nvim": { "branch": "main", "commit": "6a254139d077ad53be7e4f3602c8da0c84447fd9" },
+  "markdown-preview.nvim": { "branch": "master", "commit": "a923f5fc5ba36a3b17e289dc35dc17f66d0548ee" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "3ed90180e70a6a50cd37ce7ecc3693bcdaa7b290" },
   "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },
   "miasma": { "branch": "main", "commit": "c672feec07d4e77ac485ee58e3432a96ebe51953" },
@@ -51,6 +52,7 @@
   "vim-startify": { "branch": "master", "commit": "4e089dffdad46f3f5593f34362d530e8fe823dcf" },
   "vim-wordmotion": { "branch": "master", "commit": "81d9bd298376ab0dc465c85d55afa4cb8d5f47a1" },
   "vscode": { "branch": "main", "commit": "4f42e078a76f256c4e7ba4b9555ca90ff78cc553" },
+  "which-key.nvim": { "branch": "main", "commit": "6c1584eb76b55629702716995cca4ae2798a9cca" },
   "zen-mode.nvim": { "branch": "main", "commit": "29b292bdc58b76a6c8f294c961a8bf92c5a6ebd6" },
   "zenbones": { "branch": "main", "commit": "5d69a8b159178c53d08151350967e2b0a42d59be" }
 }

@@ -39,20 +39,30 @@ return {
         })
         local api = require("nvim-tree.api")
 
+        -- Toggle nvim-tree with \ or close it if it's focused
+        local function toggle_or_focus()
+            local is_visible = api.tree.is_visible()
+            local is_focused = api.tree.is_tree_buf()
+
+            if is_visible and is_focused then
+                api.tree.close()
+            else
+                api.tree.open()
+            end
+        end
+
+
+        vim.keymap.set("n", "<C-\\>", toggle_or_focus, { noremap = true, silent = true })
+
+        -- Open and close directories with <Left> and <Right>
         local function toggle_node()
             local node = api.tree.get_node_under_cursor()
             if node then
                 api.node.open.edit()
             end
         end
-
-        -- Open and close directories with <Left> and <Right>
         vim.keymap.set("n", "<Left>", toggle_node, {})
         vim.keymap.set("n", "<Right>", toggle_node, {})
-
-        -- Toggle nvim-tree with \
-        vim.api.nvim_set_keymap("n", "<C-\\>", ":NvimTreeFocus<CR>", { noremap = true, silent = true })
-
 
         -- Open nvim-tree and move cursor to the other window
         vim.api.nvim_create_autocmd("VimEnter", {
@@ -62,7 +72,7 @@ return {
             end
         })
 
-      -- Exit Vim if nvim-tree is the only window remaining in the only tab
+        -- Exit Vim if nvim-tree is the only window remaining in the only tab
         vim.api.nvim_create_autocmd("BufEnter", {
             nested = true,
             callback = function()
@@ -71,6 +81,5 @@ return {
                 end
             end
         })
-
     end
 }
