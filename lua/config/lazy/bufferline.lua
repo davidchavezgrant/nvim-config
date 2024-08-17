@@ -1,11 +1,14 @@
-local function get_diagnostics_indicator(count, level, diagnostics_dict, context)
-    local status = " "
-    for error, n in pairs(diagnostics_dict) do
-        local sym = error == "error" and " "
-        or (error == "warning" and " " or " ")
-        status = status .. sym .. '(' .. n .. ')' .. ' '
+local function get_diagnostics_indicator(_, _, diagnostics, _)
+    local display_string = " "
+    for level, count in pairs(diagnostics) do
+        local symbol =
+            (level == "error" and " ")
+        or (level == "warning" and " ")
+        or (level ==  "info" and " ")
+        or (level == "hint" and " ")
+        display_string = display_string .. symbol .. '(' .. count .. ')' .. ' '
     end
-    return status
+    return display_string
 end
 
 return  {
