@@ -52,5 +52,5 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "Q", ":q<CR>")
 
 -- Move between VIM windows (mac)
-vim.keymap.set("n", "˙", "<C-w>h", { noremap = true, silent = true })
-vim.keymap.set("n", "¬", "<C-w>l", { noremap = true, silent = true })
+vim.keymap.set("n", "∆", "<C-w>h", { noremap = true, silent = true })
+vim.keymap.set("n", "˚", "<C-w>l", { noremap = true, silent = true })

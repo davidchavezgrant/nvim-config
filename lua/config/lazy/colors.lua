@@ -176,7 +176,6 @@ end
 
 function UseVimDefault()
     vim.cmd.colorscheme("default")
-    SetAccents()
 end
 
 function UseVscode()

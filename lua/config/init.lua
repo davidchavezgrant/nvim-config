@@ -10,8 +10,6 @@ require('config.remaps')
 -- AUTO COMMANDS
 require('config.autocommands')
 
--- THEME MAPS
-require('config.thememaps')
 
 -- SNIPPETS
 require('config.getSnippet')
@@ -21,5 +19,8 @@ require('config.markdown')
 
 -- LAZY CONFIG
 require("config.lazy_init")
+
+-- THEME MAPS
+require('config.thememaps')
 
 UseTheme()

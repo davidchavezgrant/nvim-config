@@ -6,22 +6,12 @@ return  {
         vim.opt.termguicolors = true
         local bufferline = require("bufferline").setup{
             options = {
+                theme = "gruvbox",
                 show_buffer_close_icons = false,
                 show_close_icon = false,
                 themable = false,
-                numbers = "both",
+                numbers = "ordinal",
                 sort_by = 'id',
-                diagnostics = "nvim_lsp | coc",
-                offsets = {
-                    {
-                        filetype = "NvimTree",
-                        text = function()
-                            return vim.fn.getcwd():gsub(vim.env.HOME, "~")
-                        end,
-                        highlight = "Directory",
-                        text_align = "left"
-                    }
-                },
                 groups = {
                     items = {
                         require('bufferline.groups').builtin.pinned:with({ icon =  "" })
@@ -30,24 +20,23 @@ return  {
             }
         }
 
-
-        -- Close current buffer
-        vim.keymap.set("n", "W", ":bd<CR>", { noremap = true, silent = true })
-        -- Toggle pin
-        vim.keymap.set("n", "<C-p>", ":BufferLineTogglePin<CR>", { noremap = true, silent = true })
-        -- Next and previous buffer
-        vim.keymap.set("n", "L", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
-        vim.keymap.set("n", "H", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
-        -- Move to buffer in position 1-9
-        vim.keymap.set("n", "<leader>1", ":BufferLineGoToBuffer 1<CR>", { noremap = true, silent = true })
-        vim.keymap.set("n", "<leader>2", ":BufferLineGoToBuffer 2<CR>", { noremap = true, silent = true })
-        vim.keymap.set("n", "<leader>3", ":BufferLineGoToBuffer 3<CR>", { noremap = true, silent = true })
-        vim.keymap.set("n", "<leader>4", ":BufferLineGoToBuffer 4<CR>", { noremap = true, silent = true })
-        vim.keymap.set("n", "<leader>5", ":BufferLineGoToBuffer 5<CR>", { noremap = true, silent = true })
-        vim.keymap.set("n", "<leader>6", ":BufferLineGoToBuffer 6<CR>", { noremap = true, silent = true })
-        vim.keymap.set("n", "<leader>7", ":BufferLineGoToBuffer 7<CR>", { noremap = true, silent = true })
-        vim.keymap.set("n", "<leader>8", ":BufferLineGoToBuffer 8<CR>", { noremap = true, silent = true })
-        vim.keymap.set("n", "<leader>9", ":BufferLineGoToBuffer 9<CR>", { noremap = true, silent = true })
+        -- Close current buffer (ALT-W)
+        vim.keymap.set("n", "∑", ":bd<CR>", { noremap = true, silent = true })
+        -- Toggle pin (ALT-P)
+        vim.keymap.set("n", "π", ":BufferLineTogglePin<CR>", { noremap = true, silent = true })
+        -- Next and previous buffer (ALT-h and ALT-l)
+        vim.keymap.set("n", "¬", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
+        vim.keymap.set("n", "˙", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
+        -- Move to buffer in position 1-9 (ALT-1 to ALT-9)
+        vim.keymap.set("n", "¡", ":BufferLineGoToBuffer 1<CR>", { noremap = true, silent = true })
+        vim.keymap.set("n", "™", ":BufferLineGoToBuffer 2<CR>", { noremap = true, silent = true })
+        vim.keymap.set("n", "£", ":BufferLineGoToBuffer 3<CR>", { noremap = true, silent = true })
+        vim.keymap.set("n", "¢", ":BufferLineGoToBuffer 4<CR>", { noremap = true, silent = true })
+        vim.keymap.set("n", "∞", ":BufferLineGoToBuffer 5<CR>", { noremap = true, silent = true })
+        vim.keymap.set("n", "§", ":BufferLineGoToBuffer 6<CR>", { noremap = true, silent = true })
+        vim.keymap.set("n", "¶", ":BufferLineGoToBuffer 7<CR>", { noremap = true, silent = true })
+        vim.keymap.set("n", "•", ":BufferLineGoToBuffer 8<CR>", { noremap = true, silent = true })
+        vim.keymap.set("n", "ª", ":BufferLineGoToBuffer 9<CR>", { noremap = true, silent = true })
     end
 }
 
