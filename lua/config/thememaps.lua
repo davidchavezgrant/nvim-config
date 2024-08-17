@@ -27,7 +27,5 @@ for pattern, theme_function_name in pairs(theme_map) do
             end
         end,
     })
-
-    
 end
 

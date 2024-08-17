@@ -4,17 +4,34 @@ return  {
     dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
         vim.opt.termguicolors = true
-        local bufferline = require("bufferline").setup{
+        require("bufferline").setup{
             options = {
-                theme = "gruvbox",
                 show_buffer_close_icons = false,
                 show_close_icon = false,
-                themable = false,
+                themable = true,
                 numbers = "ordinal",
                 sort_by = 'id',
+                diagnostics = "nvim_lsp",
+                diagnostics_indicator = function(count, level, diagnostics_dict, context)
+                    local s = " "
+                    for e, n in pairs(diagnostics_dict) do
+                        local sym = e == "error" and " "
+                        or (e == "warning" and " " or " ")
+                        s = s .. n .. sym
+                    end
+                    return s
+                end,
                 groups = {
                     items = {
                         require('bufferline.groups').builtin.pinned:with({ icon =  "" })
+                    }
+                },
+                offsets = {
+                    {
+                        filetype = "NvimTree",
+                        text = "📁",
+                        highlight = "Directory",
+                        text_align = "left"
                     }
                 }
             }
