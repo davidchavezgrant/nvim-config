@@ -5,12 +5,12 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- 1. Bold, Italic, Underline
-map("n", "<C-b>", "ciw**<C-r>\"**<Esc>", {desc = "Bold word under cursor"})
-map("v", "<C-b>", "c**<C-r>\"**<Esc>", {desc = "Bold selection"})
-map("n", "<C-i>", "ciw*<C-r>\"*<Esc>", {desc = "Italicize word under cursor"})
-map("v", "<C-i>", "c*<C-r>\"*<Esc>", {desc = "Italicize selection"})
-map("n", "<C-u>", "ciw<u><C-r>\"</u><Esc>", {desc = "Underline word under cursor"})
-map("v", "<C-u>", "c<u><C-r>\"</u><Esc>", {desc = "Underline selection"})
+-- map("n", "<C-b>", "ciw**<C-r>\"**<Esc>", {desc = "Bold word under cursor"})
+-- map("v", "<C-b>", "c**<C-r>\"**<Esc>", {desc = "Bold selection"})
+-- map("n", "<C-i>", "ciw*<C-r>\"*<Esc>", {desc = "Italicize word under cursor"})
+-- map("v", "<C-i>", "c*<C-r>\"*<Esc>", {desc = "Italicize selection"})
+-- map("n", "<C-u>", "ciw<u><C-r>\"</u><Esc>", {desc = "Underline word under cursor"})
+-- map("v", "<C-u>", "c<u><C-r>\"</u><Esc>", {desc = "Underline selection"})
 
 -- 2. Headers
 for i = 1, 6 do

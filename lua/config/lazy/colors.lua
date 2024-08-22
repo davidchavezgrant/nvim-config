@@ -17,6 +17,7 @@ function UseTheme(color)
         vim.cmd.colorscheme(color)
     else
         UseVscode()
+        SetTransparentBg()
     end
 end
 
@@ -180,7 +181,7 @@ end
 
 function UseVscode()
     UseTheme("vscode")
-    SetTransparentBg()
+    --SetTransparentBg()
     --vim.api.nvim_set_hl(0, "Normal", { bg = "#000014" })
 end
 return {

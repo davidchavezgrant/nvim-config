@@ -1,5 +1,5 @@
 local theme_map = {
-    ["*.py"] = "UseDarcula",
+    ["*.py"] = "UseTheme",
     ["*.lua"] = "UseBlueMoon",
     ["*.js"] = "UseDracula",
     ["*.cs"] = "UseRiderDark",
