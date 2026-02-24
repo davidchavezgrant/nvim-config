@@ -7,7 +7,7 @@ return {
         harpoon:setup()
 
         -- Add current buffer to Harpoon list
-        vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)        
+        vim.keymap.set("n", "<C-a>", function() harpoon:list():add() end)        
         -- Toggle Harpoon list
         vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 

@@ -26,12 +26,21 @@ return {
             vim.keymap.set('n', '<leader>fr', function() vim.lsp.buf.references() end, opts)
             vim.keymap.set('n', '<leader>rn', function() vim.lsp.buf.rename() end, opts)
             vim.keymap.set('n', '<leader>fm', function() vim.lsp.buf.format() end, opts)
+            vim.diagnostic.config({
+                virtual_text = false,
+                signs = true,
+                underline = true,
+                update_in_insert = false,
+                severity_sort = false,
+            })
+            vim.o.updatetime = 250
+            vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
           end,
         })
         local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
         require('mason').setup({})
         require('mason-lspconfig').setup({
-          ensure_installed = {'tsserver', 'rust_analyzer', 'omnisharp', 'pylsp', 'pyright', 'ruff', 'lua_ls', 'dockerls', 'docker_compose_language_service', 'eslint'},
+          ensure_installed = {'rust_analyzer', 'omnisharp', 'pylsp', 'pyright', 'ruff', 'lua_ls', 'dockerls', 'docker_compose_language_service', 'eslint', 'gopls'},
           handlers = {
             function(server_name)
               require('lspconfig')[server_name].setup({
